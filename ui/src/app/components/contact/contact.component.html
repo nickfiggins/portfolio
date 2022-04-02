@@ -1,0 +1,29 @@
+<div>
+    <form [formGroup]="formGroup">
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="John" formControlName="firstName" required>
+            <mat-error *ngIf="firstName.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Doe" formControlName="lastName" required>
+            <mat-error *ngIf="lastName.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="name@example.com" formControlName="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field appearance="fill" fxFlex="400">
+                <mat-label *ngIf="type !== 'tutoring'">What are you contacting me for?</mat-label>
+                <mat-label *ngIf="type === 'tutoring'">What subject are you looking for tutoring in?</mat-label>
+                <textarea matInput formControlName="bodyText" required></textarea>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button (click)="submit()" [disabled]="!formGroup.valid">Submit</button>
+        </div>
+    </form>
+</div>

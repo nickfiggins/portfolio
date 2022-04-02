@@ -1,0 +1,36 @@
+#tutor-card{
+    background-color: white;
+}
+
+#tutor-wrapper{
+    vertical-align: center;
+    display:flex;
+    align-items: center;
+}
+
+.mat-card{
+    justify-content: center !important;
+    margin: 50px;
+    padding: 50px;
+    max-width: 50%;
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    .mat-card-title{
+        font-size: 10;
+    }   
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    .mat-card-title{
+        align-self: center;
+        font-size: 32px;
+    }
+  }
+}

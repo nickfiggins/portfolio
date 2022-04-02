@@ -1,0 +1,40 @@
+<div id='card-wrapper'>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-card>
+            <div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <mat-card-title style="color: white; padding: 10px; font-size: 24px;">Nick Figgins</mat-card-title>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <mat-card-subtitle style="color: white; font-size: 12px;">Software Engineer at Capital One</mat-card-subtitle>
+                </div>
+                <img id="profile-photo" src="assets/images/avatar.jpeg">
+            </div>
+            <mat-card-content>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div *ngFor="let icon of this.socialMedia; let i = index">
+                        <a href="{{icon.link}}" target="_blank">
+                            <button id="small-icon-button" mat-icon-button *ngIf="icon.isCustom">
+                                <mat-icon *ngIf="icon.name !== 'ycbm'" svgIcon="{{icon.name}}"></mat-icon>
+                                <mat-icon *ngIf="icon.name === 'ycbm'" id="resiz-icon-button" svgIcon="{{icon.name}}"></mat-icon>
+                            </button>
+                            <div *ngIf="i > 2">
+                                <button id="small-icon-button" mat-icon-button color="accent" *ngIf="!icon.isCustom">
+                                    <mat-icon>{{icon.name}}</mat-icon>
+                                </button>
+                            </div>
+                            <div *ngIf="i <= 2">
+                                <button id="small-icon-button" mat-icon-button *ngIf="!icon.isCustom">
+                                    <mat-icon>{{icon.name}}</mat-icon>
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <button id="tutor-button" mat-button routerLink="/tutoring"> Looking for a tutor? </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

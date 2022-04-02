@@ -1,0 +1,35 @@
+version: '2.2'
+
+services:
+  ui:
+    build: ./ui
+    image: portfolio:prod
+    container_name: portfolio-ui
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - "api:portfolio-api"
+    restart: always
+  api:
+    build: ./api
+    image: portfolio-api:prod
+    container_name: portfolio-api
+    environment:
+    - GIN_MODE=release
+    - PORTFOLIO_DB_DSN=${PORTFOLIO_DB_DSN}
+    - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+    ports:
+      - '8080:8080'
+    restart: always
+  redis:
+    image: redis:latest
+    container_name: portfolio-redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./api/conf/redis.conf:/usr/local/etc/redis/redis.conf
+    restart: on-failure
+    command: redis-server /usr/local/etc/redis/redis.conf
+networks:
+  default:

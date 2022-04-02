@@ -1,0 +1,13 @@
+<ng-particles id="particles-js" [options]="particlesOptions">
+</ng-particles>
+<button mat-fab id="mat-fab-return" color="secondary" routerLink="/">return home</button>
+<mat-card id='reading-card' *ngFor="let circle of circles" [ngStyle]="circle">
+    <mat-card-title>
+        {{circle.content.title}}
+    </mat-card-title>
+    <mat-card-content>
+        <br/>
+        <a *ngIf="circle.content.link" href="{{circle.content.link}}" target="_blank">{{circle.content.text}}</a>
+        <p *ngIf="!circle.content.link">{{circle.content.text}} </p>
+    </mat-card-content>
+</mat-card>

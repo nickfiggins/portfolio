@@ -1,0 +1,17 @@
+<ng-particles id="particles-js" [options]="particlesOptions">
+</ng-particles>
+<div id="travel-menu">
+    <button mat-fab id="mat-fab-nav" color="secondary" [matMenuTriggerFor]="belowMenu">gallery</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item *ngFor="let place of places" (click)="changePlace(place.place_name)">{{place.place_name | lowercase }}</button>
+    </mat-menu>
+</div>
+<div id="img-grid">
+    <mat-grid-list [cols]="breakpoint" rowHeight="3:4" [gutterSize]="'10px'" (window:resize)="onResize($event)">
+        <mat-grid-tile id="img-grid-tile" *ngFor="let image of this.images; index as i" (mouseenter)="mouseEnter(i, image.id)" (mouseleave)="mouseLeave(i, image.id)"><img id="grid-img" src="{{image.src_url}}" layout-fill>
+        <button id="img-grid-btn" *ngIf="this.showButton[i]" (click)="openModal(i, image.id)">Enlarge >></button>
+        </mat-grid-tile>
+        <app-image-modal></app-image-modal>
+      </mat-grid-list>
+</div>
+

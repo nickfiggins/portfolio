@@ -1,0 +1,45 @@
+
+#card-wrapper{
+    justify-content: center;
+    display: flex;
+    vertical-align: center;
+}
+
+.mat-card {
+    margin: 50px;
+    padding: 50px;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+#home-fab{
+    width: 10vh;
+    height: 10vh;
+}
+
+
+
+#profile-photo{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    opacity: .9;
+}
+
+#small-icon-button{
+    background-color: rgba(0,0,0,0);
+}
+
+#resiz-icon-button{
+    transform: scale(1.65);
+}
+
+:host .mat-button{
+	border-radius: 20px !important;
+}
+
+#tutor-button{
+    color: black;
+    background-color: white;
+}

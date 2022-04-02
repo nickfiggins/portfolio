@@ -1,0 +1,32 @@
+<div class="content-card-wrapper" fxLayout="row" fxLayoutAlign="center center" (window:resize)="onResize($event)">
+    <mat-card class="content-card">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-card-title style="color: black; padding: 10px;">Projects</mat-card-title>
+        </div>
+        <div *ngFor="let project of projects">
+            <div *ngIf="!mobile" fxLayout="row" fxLayoutAlign="center center">
+                <div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <h2>{{project.name}}
+                            <a mat-raised-button class="link-button" *ngIf="project.url" href="{{project.url}}" target="_blank">Click to view</a>
+                        </h2>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <p> {{project.description}}</p>
+                    </div>
+                </div>
+                    
+            </div>
+            <app-carousel [slides]='projectImages[project.id]'></app-carousel>
+            <br/>
+        </div>
+        <div *ngIf="mobile" fxLayout="row" fxLayoutAlign="center center">
+            <ul>
+                <li *ngFor="let project of projects">
+                    <h2>{{project.name}}</h2><br/>
+                    <p> {{project.description}} </p>
+                </li>
+            </ul>
+        </div>
+    </mat-card>
+</div>

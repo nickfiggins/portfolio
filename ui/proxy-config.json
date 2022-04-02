@@ -1,0 +1,14 @@
+{
+    "/api/*": {
+        "changeOrigin": true,
+        "target": "http://localhost:8080",
+        "secure": false,
+        "pathRewrite": {"^/api" : ""}
+      },
+      "/gateway": {
+        "changeOrigin": true,
+        "target": "https://51xu7d9dze.execute-api.us-east-1.amazonaws.com/default/contactlambdav3",
+        "secure": false,
+        "pathRewrite": {"^/gateway": ""}
+      }
+}

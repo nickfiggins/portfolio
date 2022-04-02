@@ -1,0 +1,22 @@
+<p>freelance works!</p>
+<div class="content-card-wrapper" fxLayout="row" fxLayoutAlign="center center" (window:resize)="onResize($event)">
+    <mat-card class="content-card">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-card-title style="color: black; padding: 10px;">Freelance Work</mat-card-title>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-card-content>
+                <h3 fxLayout="row" fxLayoutAlign="center center"><b>Note: Sorry, but I am no longer taking freelance requests.</b></h3>
+                <s>
+                    <p style="text-indent: 50px;">Looking for someone to help you make a website, or other project? I'd be happy to help you. I offer web development services
+                    with various languages and frameworks.  I'd be eager to work on any project you're trying to make - a personal portfolio, a website for your start up, or just about anything else.
+                    Please fill out the form below to contact me for pricing/information:</p>
+                    <p style="text-indent: 50px;">Check out the reviews on my <a href="https://www.fiverr.com/nickfiggins?up_rollout=true" target="_blank">Fiverr page!</a></p>
+                </s>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <app-contact type="freelance"></app-contact>
+                </div>
+            </mat-card-content>
+        </div>
+    </mat-card>
+</div>
