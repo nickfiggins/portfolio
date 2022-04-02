@@ -17,8 +17,8 @@
         </mat-form-field>
         <div fxLayout="row" fxLayoutAlign="center center">
             <mat-form-field appearance="fill" fxFlex="400">
-                <mat-label *ngIf="type !== 'tutoring'">What are you contacting me for?</mat-label>
-                <mat-label *ngIf="type === 'tutoring'">What subject are you looking for tutoring in?</mat-label>
+                <mat-label *ngIf="type !== 'tutoring'; else generalform">What are you contacting me for?</mat-label>
+                <mat-label #generalform>What subject are you looking for tutoring in?</mat-label>
                 <textarea matInput formControlName="bodyText" required></textarea>
             </mat-form-field>
         </div>
