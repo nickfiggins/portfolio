@@ -8,7 +8,7 @@ export class EnumService {
     socialMedia = {
         linkedIn: {name: 'linkedIn', link:'https://www.linkedin.com/in/nicholas-figgins/', isCustom: true},
         github: {name: 'github', link: 'https://github.com/nickfiggins', isCustom: true},
-        resume: {name: 'library_books', link: 'assets/files/resume.pdf', isCustom: false},
+        //resume: {name: 'library_books', link: 'assets/files/resume.pdf', isCustom: false},
         buymeacoffee: {name: 'buymeacoffee', link: 'https://www.buymeacoffee.com/nickfiggins', isCustom: true},
         gopeer: {name: 'perm_contact_calendar', link: 'https://gopeer.org/profile/603fc26b7ec0544baa4304c2', isCustom: false},
         ycbm: {name: 'ycbm', link: 'https://nickfiggins.youcanbook.me/', isCustom: true}

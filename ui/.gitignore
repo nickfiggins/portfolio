@@ -52,3 +52,5 @@ Thumbs.db
 api/*.env
 certificates
 .editorconfig
+
+.angular/*

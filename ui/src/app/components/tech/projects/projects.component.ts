@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EnumService } from '../../shared/services/Enum.service';
 import { ProjectsService } from './services/projects.service';
-import { Input } from '@angular/core';
 import {CarouselComponent} from '../../shared/carousel/carousel.component';
 import { Project } from './models/Project.model';
 import { ProjectImage } from './models/ProjectImage.model';
@@ -25,7 +24,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectsService.getAllProjects().toPromise().then((response) => {
-      this.projects = response;
+      if(response) this.projects = response;
     }).then(() => {
       this.projects = this.projects.sort((projectA, projectB) => (projectA.id - projectB.id));
       for(let project of this.projects){

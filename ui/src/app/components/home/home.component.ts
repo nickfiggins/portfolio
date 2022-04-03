@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       events: {
         onClick: {
           enable: true,
-          mode: "repulse"
+          mode: "push"
         },
         onHover: {
           enable: true,
