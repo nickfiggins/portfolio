@@ -49,7 +49,7 @@ func ContactFormSubmit(c *gin.Context) {
 		emailToSelf = models.NewSelfGeneralEmail(inquirerFullName, formatPlainTextFormSubmission(input))
 		emailToStudent = models.NewGeneralEmail(input.Email, inquirerFullName, models.EmailTemplate{})
 	default:
-		c.AbortWithError(http.StatusExpectationFailed, errors.New("Unknown request type - " + requestType))
+		_ = c.AbortWithError(http.StatusExpectationFailed, errors.New("Unknown request type - " + requestType))
 	}
 
 	sgEmailToSelf := emailToSelf.GetEmail().ConvertEmailToSendGridEmail()

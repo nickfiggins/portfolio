@@ -33,6 +33,8 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"data": "hello world"})
 	})
 	controllers.LoadRoutes(r)
-	r.Run()
+	err = r.Run(); if err != nil {
+		panic(err)
+	}
 	
 }

@@ -74,13 +74,17 @@ var _ = Describe("CORS Requests", func() {
 	})
 })
 
+type LambdaId string
+
+const AwsRequestId LambdaId = "AwsRequestId"
+
 
 var _ = Describe("End-to-end handler requests", func() {
 	client := cf.NewEmailClient(&mockSendgrid{})
 	form_input := &cf.CreateEmailInput{Email: "testing@test.com", FirstName: "nick", LastName: "fig", RequestType: "tutoring", Message: "yo"}
 	json_body, _ := json.Marshal(form_input)
 	req := &events.APIGatewayProxyRequest{HTTPMethod: "POST", Body: string(json_body)}
-	ctx := context.WithValue(context.Background(), "AwsRequestId", "test req id")
+	ctx := context.WithValue(context.Background(), AwsRequestId, "test req id")
 	Context("Happy path", func() {
 		resp, err := client.Handle(ctx, req)
 		It("Successfully handles the request", func() {

@@ -1,13 +1,11 @@
 package middleware
 
 import (
-	"context"
 	"fmt"
 
 	"github.com/go-redis/redis"
 )
 
-var ctx = context.Background()
 var Redis *redis.Client
 
 func RunRedis() {

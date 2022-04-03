@@ -1,10 +1,10 @@
-FROM node:12.16.1-alpine As builder
+FROM node:12.20.1-alpine As builder
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package.json package-lock.json /usr/src/app/
 RUN npm install
 COPY . /usr/src/app
-COPY ../../shared/nginx.conf /usr/src/app/nginx.conf
+COPY nginx.conf /usr/src/app/nginx.conf
 RUN npm run build --prod
 
 FROM nginx:1.15.8-alpine
