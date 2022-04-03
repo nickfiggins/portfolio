@@ -29,7 +29,7 @@
     "@angular/router": "~11.2.5",
     "@ng-toolkit/serverless": "^8.1.0",
     "@types/lodash": "^4.14.168",
-    "angular-responsive-carousel": "^2.0.2",
+    "angular-responsive-carousel": "^2.1.2",
     "lodash": "^4.17.21",
     "material": "^0.4.3",
     "ng-particles": "^2.2.4",
